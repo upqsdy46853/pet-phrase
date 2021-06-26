@@ -50,12 +50,17 @@ export default class Microphone extends React.Component {
         this.setState(
             state => ({ isPressed: !state.isPressed }),
         )
+        //bug here
+        if(!this.state.isPressed)
+            this.props.record()
+        else    
+            this.props.stop()
     }
     _micButton() {
         const { isPressed, animated, opacityA, } = this.state;
         if (isPressed) {
             //some function
-            record()
+            //record()
             this._runAnimation();
             return (
                 <Animated.View style={{
@@ -76,7 +81,7 @@ export default class Microphone extends React.Component {
             );
         } else {
             //some function
-            stopRecord()
+            //stopRecord()
             return (
                 <View style={{
                     width: 80,

@@ -44,6 +44,7 @@ class VoiceTest extends Component<Props, State> {
     Voice.onSpeechResults = this.onSpeechResults;
     Voice.onSpeechPartialResults = this.onSpeechPartialResults;
     Voice.onSpeechVolumeChanged = this.onSpeechVolumeChanged;
+    cnt = 0
   }
 
   componentWillUnmount() {
@@ -62,6 +63,7 @@ class VoiceTest extends Component<Props, State> {
     this.setState({
       recognized: '√',
     });
+    cnt = 0
   };
 
   onSpeechEnd = (e: any) => {
@@ -97,6 +99,12 @@ class VoiceTest extends Component<Props, State> {
     this.setState({
       pitch: e.value,
     });
+    cnt = cnt + 1
+    if(cnt > 10){
+      Voice.stop().then(Voice.start('zh_TW'))
+      cnt = 0
+    }
+    console.log(cnt)
   };
 
   _startRecognizing = async () => {
