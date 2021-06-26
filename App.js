@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-//import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from './HomeScreen.js'
 import ListScreen from './ListScreen.js'
 import VoiceTest from './VoiceTest.js'
@@ -44,26 +44,28 @@ function ListStackScreen() {
 export default class App extends React.Component {
   render(){
     return (
-	<VoiceTest/>
-      //<NavigationContainer>
-      //  <Tab.Navigator tabBarOptions={{
-      //    activeTintColor: 'black',
-      //    inactiveTintColor: 'gray',
-      //  }}>
-      //    <Tab.Screen name="Home" component={HomeStackScreen} options={{
-      //    tabBarLabel: 'Home',
-      //    //tabBarIcon: ({ color, size }) => (
-      //    //  <MaterialCommunityIcons name="home" color={color} size={size} />
-      //    //),
-      //  }}/>
-      //    <Tab.Screen name="List" component={ListStackScreen}  options={{
-      //    tabBarLabel: 'word',
-      //    //tabBarIcon: ({ color, size }) => (
-      //    //  <MaterialCommunityIcons name="heart" color={color} size={size} />
-      //    //),
-      //  }}/>
-      //  </Tab.Navigator>
-      //</NavigationContainer>
+	//<VoiceTest/>
+      <NavigationContainer>
+        <Tab.Navigator tabBarOptions={{
+          activeTintColor: 'black',
+          inactiveTintColor: 'gray',
+        }}>
+          <Tab.Screen name="Home" component={HomeStackScreen} options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color, size }) => (
+            //<MaterialCommunityIcons name="home" color={color} size={size} />
+            <Icon name="home" size={size+5} color={color} />
+          ),
+        }}/>
+          <Tab.Screen name="List" component={ListStackScreen}  options={{
+          tabBarLabel: 'word',
+          tabBarIcon: ({ color, size }) => (
+            //<MaterialCommunityIcons name="heart" color={color} size={size} />
+            <Icon name="heart" size={size} color={color} />
+          ),
+        }}/>
+        </Tab.Navigator>
+      </NavigationContainer>
     );
   }
 }

@@ -6,6 +6,7 @@ import {
     Animated
 } from 'react-native';
 //import { FontAwesome } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {record, stopRecord} from './api/record'
 
 
@@ -94,7 +95,7 @@ export default class Microphone extends React.Component {
             <View style={styles.container}>
                 <TouchableOpacity onPress={this._onPress} style={styles.container}>
                     {this._micButton()}
-                    {/* <FontAwesome name="microphone" size={40} color="black" style={styles.microphone}/> */}
+                    <Icon name="microphone" size={40} color="black" style={styles.microphone}/>
                 </TouchableOpacity>
             </View>
         );
