@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Microphone from './Microphone.js'
+import {record} from './api/record'
 
 import Voice, {
   SpeechRecognizedEvent,
@@ -81,11 +82,12 @@ export default class HomeScreen extends React.Component<Props, State> {
 
   onSpeechResults = (e: SpeechResultsEvent) => {
     console.log('onSpeechResults: ', e);
+    var parseString = e.value[0].substr(pre.length);
     this.setState({
       results: e.value,
-      outputString: e.value[0].substr(pre.length)
+      outputString: parseString 
     });
-    console.log((e.value[0]).substr(pre.length))
+    console.log(parseString)
   };
 
   onSpeechPartialResults = (e: SpeechResultsEvent) => {
@@ -102,10 +104,12 @@ export default class HomeScreen extends React.Component<Props, State> {
     });
     cnt = cnt + 1
     if(cnt>10 && en){
-      console.log(this.state.results)
+      //console.log(this.state.results)
       en = false 
-      if(this.state.results[0])
+      if(this.state.results[0]){
         pre = this.state.results[0]
+        record('pochih',this.state.outputString)
+      }
       this.setState({
         outputString: ''
       })

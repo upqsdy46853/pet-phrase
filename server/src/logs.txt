@@ -1,0 +1,248 @@
+1624732729 ERROR  TypeError: Cannot read property 'then' of undefined
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:33:5
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624732840 ERROR  TypeError: Cannot read property 'then' of undefined
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:33:5
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624735272 ERROR  SyntaxError: Unexpected token ' in JSON at position 17
+    at JSON.parse (<anonymous>)
+    at parse (/Users/po_chih/Desktop/myWord/server/node_modules/body-parser/lib/types/json.js:89:19)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/body-parser/lib/read.js:121:18
+    at invokeCallback (/Users/po_chih/Desktop/myWord/server/node_modules/raw-body/index.js:224:16)
+    at done (/Users/po_chih/Desktop/myWord/server/node_modules/raw-body/index.js:213:7)
+    at IncomingMessage.onEnd (/Users/po_chih/Desktop/myWord/server/node_modules/raw-body/index.js:273:7)
+    at IncomingMessage.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+1624735315 ERROR  SyntaxError: Unexpected token p in JSON at position 17
+    at JSON.parse (<anonymous>)
+    at parse (/Users/po_chih/Desktop/myWord/server/node_modules/body-parser/lib/types/json.js:89:19)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/body-parser/lib/read.js:121:18
+    at invokeCallback (/Users/po_chih/Desktop/myWord/server/node_modules/raw-body/index.js:224:16)
+    at done (/Users/po_chih/Desktop/myWord/server/node_modules/raw-body/index.js:213:7)
+    at IncomingMessage.onEnd (/Users/po_chih/Desktop/myWord/server/node_modules/raw-body/index.js:273:7)
+    at IncomingMessage.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+1624735334 ERROR  QueryResultError: No data returned from the query.
+    at Query.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-promise/lib/query.js:213:41)
+    at Query.handleReadyForQuery (/Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/query.js:138:12)
+    at Client._handleReadyForQuery (/Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/client.js:290:19)
+    at Connection.emit (events.js:311:20)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/connection.js:114:12
+    at Parser.parse (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:40:17)
+    at Socket.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+1624735940 ERROR  QueryResultError: No data returned from the query.
+    at Query.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-promise/lib/query.js:213:41)
+    at Query.handleReadyForQuery (/Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/query.js:138:12)
+    at Client._handleReadyForQuery (/Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/client.js:290:19)
+    at Connection.emit (events.js:311:20)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/connection.js:114:12
+    at Parser.parse (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:40:17)
+    at Socket.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+1624736887 ERROR  QueryResultError: No data returned from the query.
+    at Query.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-promise/lib/query.js:213:41)
+    at Query.handleReadyForQuery (/Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/query.js:138:12)
+    at Client._handleReadyForQuery (/Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/client.js:290:19)
+    at Connection.emit (events.js:311:20)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/connection.js:114:12
+    at Parser.parse (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:40:17)
+    at Socket.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+1624736931 ERROR  QueryResultError: No data returned from the query.
+    at Query.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-promise/lib/query.js:213:41)
+    at Query.handleReadyForQuery (/Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/query.js:138:12)
+    at Client._handleReadyForQuery (/Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/client.js:290:19)
+    at Connection.emit (events.js:311:20)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/connection.js:114:12
+    at Parser.parse (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:40:17)
+    at Socket.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+1624737682 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624737768 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624737841 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624738947 ERROR  error: operator does not exist: text = text[]
+    at Parser.parseErrorMessage (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:287:98)
+    at Parser.handlePacket (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:126:29)
+    at Parser.parse (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:39:38)
+    at Socket.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+1624738950 ERROR  error: operator does not exist: text = text[]
+    at Parser.parseErrorMessage (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:287:98)
+    at Parser.handlePacket (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:126:29)
+    at Parser.parse (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:39:38)
+    at Socket.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+1624738954 ERROR  error: operator does not exist: text = text[]
+    at Parser.parseErrorMessage (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:287:98)
+    at Parser.handlePacket (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:126:29)
+    at Parser.parse (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:39:38)
+    at Socket.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+1624739072 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624739074 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624739319 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624739336 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624739340 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624739413 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624739415 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624739614 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624739930 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)

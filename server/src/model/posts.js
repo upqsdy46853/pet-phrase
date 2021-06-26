@@ -1,0 +1,57 @@
+if (!global.db) {
+  const pgp = require('pg-promise')();
+  db = pgp(process.env.DB_URL);
+}
+
+function list(username = '', start) {
+  const where = [];
+  if (username) where.push(`username ILIKE '%$1:value%'`);
+  if (start) where.push('id < $2');
+  const sql = `
+        SELECT *
+        FROM posts
+        ${where.length ? 'WHERE ' + where.join(' AND ') : ''}
+        ORDER BY id DESC
+        LIMIT 10
+    `;
+  return db.any(sql, [username, start]);
+}
+
+function create(username, c_text) {
+  var find;
+  var sql;
+  return exist(username, c_text).then((data) => {
+      arr = { ...data };
+      find = arr.exists;
+      if (find) {
+        sql = `
+        UPDATE posts
+        SET count = count + 1
+        WHERE username = $<username> AND c_text = $<c_text>
+        RETURNING *
+        `;
+      }
+      else {
+        sql = `
+        INSERT INTO posts ($<this:name>)
+        VALUES ($<username>, $<c_text>)
+        RETURNING *
+        `;
+      }
+      return db.one(sql, { username, c_text });
+    }
+  );
+}
+
+function exist(username, c_text) {
+  const sql = `
+  SELECT EXISTS(SELECT 1 FROM POSTS WHERE username = $<username> AND c_text = $<c_text>);
+  `;
+  return db.one(sql, { username, c_text });
+}
+
+
+module.exports = {
+  list,
+  create,
+};

@@ -7,7 +7,6 @@ import {
 } from 'react-native';
 //import { FontAwesome } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {record, stopRecord} from './api/record'
 
 
 export default class Microphone extends React.Component {
