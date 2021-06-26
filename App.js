@@ -5,6 +5,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeScreen from './HomeScreen.js'
 import ListScreen from './ListScreen.js'
+import VoiceTest from './VoiceTest.js'
+import {PERMISSIONS} from 'react-native-permissions';
+PERMISSIONS.IOS.SPEECH_RECOGNITION;
+PERMISSIONS.IOS.MICROPHONE;
+
 
 const HomeStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -39,25 +44,26 @@ function ListStackScreen() {
 export default class App extends React.Component {
   render(){
     return (
-      <NavigationContainer>
-        <Tab.Navigator tabBarOptions={{
-          activeTintColor: 'black',
-          inactiveTintColor: 'gray',
-        }}>
-          <Tab.Screen name="Home" component={HomeStackScreen} options={{
-          tabBarLabel: 'Home',
-          //tabBarIcon: ({ color, size }) => (
-          //  <MaterialCommunityIcons name="home" color={color} size={size} />
-          //),
-        }}/>
-          <Tab.Screen name="List" component={ListStackScreen}  options={{
-          tabBarLabel: 'word',
-          //tabBarIcon: ({ color, size }) => (
-          //  <MaterialCommunityIcons name="heart" color={color} size={size} />
-          //),
-        }}/>
-        </Tab.Navigator>
-      </NavigationContainer>
+	<VoiceTest/>
+      //<NavigationContainer>
+      //  <Tab.Navigator tabBarOptions={{
+      //    activeTintColor: 'black',
+      //    inactiveTintColor: 'gray',
+      //  }}>
+      //    <Tab.Screen name="Home" component={HomeStackScreen} options={{
+      //    tabBarLabel: 'Home',
+      //    //tabBarIcon: ({ color, size }) => (
+      //    //  <MaterialCommunityIcons name="home" color={color} size={size} />
+      //    //),
+      //  }}/>
+      //    <Tab.Screen name="List" component={ListStackScreen}  options={{
+      //    tabBarLabel: 'word',
+      //    //tabBarIcon: ({ color, size }) => (
+      //    //  <MaterialCommunityIcons name="heart" color={color} size={size} />
+      //    //),
+      //  }}/>
+      //  </Tab.Navigator>
+      //</NavigationContainer>
     );
   }
 }
