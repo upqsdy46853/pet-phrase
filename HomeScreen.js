@@ -158,7 +158,7 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.contents}>
-           <Text style={{fontSize: 40}}> {this.state.outputString} </Text>
+           <Text style={styles.outputString}> {this.state.outputString} </Text>
           <Microphone record={this._startRecognizing} stop={this._stopRecognizing}/>
         </View>
       </View>
@@ -179,4 +179,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  outputString: {
+    fontSize: 40,
+    color: 'gray'
+  }
 });

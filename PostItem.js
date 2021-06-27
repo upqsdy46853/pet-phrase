@@ -29,7 +29,7 @@ export default class PostItem extends React.Component{
         return(
         <View style={styles.listItem}>
             <View style = {styles.post}>
-                <Text style = {styles.c_text}>{c_text}</Text>
+                <Text style = {styles.input}>{c_text}</Text>
                 <TextInput
                     style={styles.input}
                     onChangeText={(text)=>{this.setState({text: text})}}
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     listItem: {
         flexDirection: 'column',
         alignItems: 'stretch',
-        borderWidth: 10,
+        borderWidth: 4,
         borderColor: '#FFFFFF',
     },
     c_text: {
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         padding:5
     },
     post: {
-        backgroundColor: '#3DD4FC',
+        backgroundColor: 'powderblue',
         borderRadius:10,
         opacity:0.7
     },
@@ -70,6 +70,6 @@ const styles = StyleSheet.create({
     input:{
         textAlign: 'center',
         fontSize: 25,
-        padding: 5
+        padding: 5,
     }
 });

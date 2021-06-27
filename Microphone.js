@@ -48,25 +48,25 @@ export default class Microphone extends React.Component {
     _onPress() {
         this.setState(
             state => ({ isPressed: !state.isPressed }),
+            ()=>{
+                if(this.state.isPressed)
+                    this.props.record()
+                else    
+                    this.props.stop()
+            }
         )
-        //bug here
-        if(!this.state.isPressed)
-            this.props.record()
-        else    
-            this.props.stop()
     }
     _micButton() {
         const { isPressed, animated, opacityA, } = this.state;
-        if (isPressed) {
+        if (!isPressed) {
             //some function
-            //record()
             this._runAnimation();
             return (
                 <Animated.View style={{
                     width: 90,
                     height: 90,
                     borderRadius: 50,
-                    backgroundColor: '#BEDCA3',
+                    backgroundColor: 'gray',
                     opacity: opacityA,
                     transform: [
                         {
@@ -80,13 +80,12 @@ export default class Microphone extends React.Component {
             );
         } else {
             //some function
-            //stopRecord()
             return (
                 <View style={{
-                    width: 80,
-                    height: 80,
-                    borderRadius: 50,
-                    backgroundColor: '#BEDCA3',
+                    //width: 80,
+                    //height: 80,
+                    //borderRadius: 50,
+                    //backgroundColor: '#BEDCA3',
                 }}>
                     {/* icon or image */}
                 </View>
@@ -99,7 +98,7 @@ export default class Microphone extends React.Component {
             <View style={styles.container}>
                 <TouchableOpacity onPress={this._onPress} style={styles.container}>
                     {this._micButton()}
-                    <Icon name="microphone" size={40} color="black" style={styles.microphone}/>
+                    <Icon name="microphone" size={40} color={this.state.isPressed?"red":"black"} style={styles.microphone}/>
                 </TouchableOpacity>
             </View>
         );
