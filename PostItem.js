@@ -16,7 +16,7 @@ export default class PostItem extends React.Component{
         super(props);
 
         this.state = {
-            text: props.content
+            text: props.e_text
         };
 
         
@@ -25,7 +25,7 @@ export default class PostItem extends React.Component{
   
 
     render(){
-        const {id, c_text, content} = this.props;
+        const {id, c_text, e_text} = this.props;
         return(
         <View style={styles.listItem}>
             <View style = {styles.post}>

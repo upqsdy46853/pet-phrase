@@ -77,7 +77,6 @@ export default class App extends React.Component {
 
   getWordList(){
     list('pochih').then(word=>{
-      console.log(word.length)
       this.setState({word})
      })
   }

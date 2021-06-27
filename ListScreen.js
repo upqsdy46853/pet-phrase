@@ -20,7 +20,7 @@ export default class ListScreen extends React.Component {
         <FlatList
           data = {this.props.word}
           renderItem = {(p) => { return <PostItem {...p.item}/>;}}
-          keyExtractor={item => item.c_text}
+          keyExtractor={item => item.id}
         />
         </View>
     );

@@ -15,6 +15,7 @@ const schemaSql = `
     CREATE TABLE posts (
         id                serial PRIMARY KEY NOT NULL,
         "c_text"          text NOT NULL,
+        "e_text"          text NOT NULL,
         ts                bigint NOT NULL DEFAULT (extract(epoch from now())),
         "count"           integer NOT NULL DEFAULT 1,
         "username"        text NOT NULL

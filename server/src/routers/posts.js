@@ -35,5 +35,37 @@ router.post('/record', function (req, res, next) {
     })
     .catch(next);
 });
+// Revise
+router.post('/revise/:id/:c_text', function (req, res, next) {
+  const { id , c_text} = req.params;
+    if (!id || !c_text) {
+      const err = new Error('Post ID and c_text are required');
+      err.status = 400;
+      throw err;
+    }
+    postModel
+      .revise(id,c_text)
+      .then((post) => {
+        res.json(post);
+      })
+      .catch(next);
+});
+
+// Delete
+router.post('/delete/:id', function (req, res, next) {
+  const { id } = req.params;
+    if (!id) {
+      const err = new Error('Post ID is required');
+      err.status = 400;
+      throw err;
+    }
+    postModel
+      .Delete(id)
+      .then((post) => {
+        res.json(post);
+      })
+      .catch(next);
+});
+
 
 module.exports = router;
