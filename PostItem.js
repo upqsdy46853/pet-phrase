@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, StyleSheet,Text, Button, TextInput} from 'react-native';
+import {View, StyleSheet,Text, TouchableOpacity, TextInput} from 'react-native';
 import  PropTypes from 'prop-types'
-import {revise} from './api/record'
+import {revise, remove} from './api/record'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class PostItem extends React.Component{
     static propTypes ={
@@ -27,6 +28,9 @@ export default class PostItem extends React.Component{
         <View style={styles.listItem}>
             <View style = {styles.post}>
                 <Text style = {styles.input}>{c_text}</Text>
+                <TouchableOpacity style = {styles.cross} onPress = {this.handleDelete.bind(this)}>
+                    <Icon name="times" size={25} color="black"/>
+                </TouchableOpacity>
                 <TextInput
                     style={styles.input}
                     onChangeText={(text)=>{this.setState({text: text})}}
@@ -39,7 +43,15 @@ export default class PostItem extends React.Component{
     }
 
     handleSubmit(){
-        revise(this.props.id, this.state.text)
+        revise(this.props.id, this.state.text).then(()=>{
+            this.props.getWordList()
+        })
+    }
+
+    handleDelete(){
+        remove(this.props.id).then(()=>{
+            this.props.getWordList()
+        })
     }
     
 }
@@ -69,5 +81,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 25,
         padding: 5,
+    },
+    cross:{
+        position:'absolute',left:360
     }
 });

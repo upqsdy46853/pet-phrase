@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from './HomeScreen.js'
 import ListScreen from './ListScreen.js'
 import VoiceTest from './VoiceTest.js'
-import {list} from './api/record'
+import {list, revise, remove} from './api/record'
 import {PERMISSIONS} from 'react-native-permissions';
 PERMISSIONS.IOS.SPEECH_RECOGNITION;
 PERMISSIONS.IOS.MICROPHONE;
@@ -37,7 +37,7 @@ const ListStack = createStackNavigator();
 function ListStackScreen(props) {
   return (
     <ListStack.Navigator>
-      <ListStack.Screen name="你常說..." children={()=><ListScreen word={props.word}/>} />
+      <ListStack.Screen name="你常說..." children={()=><ListScreen word={props.word} getWordList={props.getWordList}/>} />
       {/* <ListStack.Screen name="Details" component={DetailsScreen} /> */}
     </ListStack.Navigator>
   );
@@ -64,7 +64,7 @@ export default class App extends React.Component {
             <Icon name="home" size={size+5} color={color} />
           ),
         }}/>
-          <Tab.Screen name="List" children={()=><ListStackScreen word={this.state.word}/>}  options={{
+          <Tab.Screen name="List" children={()=><ListStackScreen word={this.state.word} getWordList={this.getWordList.bind(this)}/>}  options={{
           tabBarLabel: 'word',
           tabBarIcon: ({ color, size }) => (
             <Icon name="heart" size={size} color={color} />

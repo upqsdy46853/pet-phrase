@@ -27,9 +27,7 @@ export function record(username,c_text){
             username: username,
             c_text: c_text 
         })
-    }).then(res=>{
-        console.log(res)
-    });
+    })
 };
 export function revise(id, e_text){
     let url = `${postBaseUrl}/revise/`;
@@ -40,7 +38,18 @@ export function revise(id, e_text){
             Accept: 'application/json',
             'Content-Type': 'application/json'
         },
-    }).then(res=>{
+    })
+}
+
+export function remove(id){
+    let url = `${postBaseUrl}/delete/${id}`;
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+    }) .then(res=>{
         console.log(res)
     })
 }
