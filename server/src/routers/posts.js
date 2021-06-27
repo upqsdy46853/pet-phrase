@@ -36,15 +36,15 @@ router.post('/record', function (req, res, next) {
     .catch(next);
 });
 // Revise
-router.post('/revise/:id/:c_text', function (req, res, next) {
-  const { id , c_text} = req.params;
-    if (!id || !c_text) {
-      const err = new Error('Post ID and c_text are required');
+router.post('/revise/:id/:e_text', function (req, res, next) {
+  const { id , e_text} = req.params;
+    if (!id || !e_text) {
+      const err = new Error('Post ID and e_text are required');
       err.status = 400;
       throw err;
     }
     postModel
-      .revise(id,c_text)
+      .revise(id,e_text)
       .then((post) => {
         res.json(post);
       })

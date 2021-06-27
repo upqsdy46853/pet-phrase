@@ -1,8 +1,7 @@
 import React from 'react';
 import {View, StyleSheet,Text, Button, TextInput} from 'react-native';
 import  PropTypes from 'prop-types'
-//import {ListItem, Icon} from 'native-base';
-//import { borderRadius, padding, style } from 'styled-system';
+import {revise} from './api/record'
 
 export default class PostItem extends React.Component{
     static propTypes ={
@@ -20,10 +19,8 @@ export default class PostItem extends React.Component{
         };
 
         
-        this.handleEditToggle = this.handleEditToggle.bind(this);
     }
   
-
     render(){
         const {id, c_text, e_text} = this.props;
         return(
@@ -33,6 +30,7 @@ export default class PostItem extends React.Component{
                 <TextInput
                     style={styles.input}
                     onChangeText={(text)=>{this.setState({text: text})}}
+                    onSubmitEditing= {this.handleSubmit.bind(this)}
                     value= {this.state.text}
                 /> 
             </View>
@@ -40,9 +38,9 @@ export default class PostItem extends React.Component{
         )
     }
 
-    handleEditToggle(){
-        
-    }  
+    handleSubmit(){
+        revise(this.props.id, this.state.text)
+    }
     
 }
 
