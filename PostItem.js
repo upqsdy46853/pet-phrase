@@ -64,12 +64,6 @@ const styles = StyleSheet.create({
         borderWidth: 4,
         borderColor: '#FFFFFF',
     },
-    c_text: {
-        textAlign: 'center',
-        fontSize: 30,
-        padding:5,
-        fontWeight: 'bold'
-    },
     post: {
         backgroundColor: 'powderblue',
         borderRadius:10,
@@ -80,14 +74,14 @@ const styles = StyleSheet.create({
     },
     c_text:{
         textAlign: 'center',
-        fontSize: 25,
-        padding: 5,
+        fontSize: 23,
+        padding: 4,
         fontWeight: 'bold'
     },
     e_text:{
         textAlign: 'center',
         fontSize: 22,
-        padding: 5,
+        padding: 4,
         color: '#222222'
     }
     ,
