@@ -4,17 +4,19 @@ export function list(username){
     let url = `${postBaseUrl}/record`;
     let query = [];
     query.push(`username=${username}`)
-
     if (query.length) url += '?' + query.join('&');
-    fetch(url, {
+
+    return fetch(url, {
 	method: 'GET',
     }).then(res=>{
-        console.log(res)
+        return res.json().then(json=>{
+            return json
+        })
     });
 };
 export function record(username,c_text){
     let url = `${postBaseUrl}/record`;
-    fetch(url, {
+    return fetch(url, {
         method: 'POST',
         headers: {
             Accept: 'application/json',

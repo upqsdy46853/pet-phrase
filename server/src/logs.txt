@@ -246,3 +246,58 @@
     at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
     at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
     at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624740536 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Downloads/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Downloads/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624740568 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Downloads/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Downloads/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624740581 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Downloads/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Downloads/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624740605 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Downloads/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Downloads/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624740654 ERROR  Error: username and c_text are required
+    at /Users/po_chih/Downloads/myWord/server/src/routers/posts.js:27:17
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Downloads/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Downloads/myWord/server/node_modules/express/lib/router/layer.js:95:5)

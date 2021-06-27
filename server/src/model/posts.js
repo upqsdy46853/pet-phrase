@@ -5,8 +5,7 @@ if (!global.db) {
 
 function list(username = '', start) {
   const where = [];
-  if (username) where.push(`username ILIKE '%$1:value%'`);
-  if (start) where.push('id < $2');
+  if (username) where.push(`username ILIKE '%$1:value%'`); if (start) where.push('id < $2');
   const sql = `
         SELECT *
         FROM posts

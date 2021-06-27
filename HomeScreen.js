@@ -9,19 +9,8 @@ import Voice, {
   SpeechErrorEvent,
 } from '@react-native-voice/voice';
 
-type Props = {};
-type State = {
-  recognized: string;
-  pitch: string;
-  error: string;
-  end: string;
-  started: string;
-  results: string[];
-  partialResults: string[];
-  outputString: string
-};
 
-export default class HomeScreen extends React.Component<Props, State> {
+export default class HomeScreen extends React.Component {
   state = {
     recognized: '',
     pitch: '',
@@ -32,7 +21,7 @@ export default class HomeScreen extends React.Component<Props, State> {
     partialResults: [],
     outputString: '',
   };
-  constructor(props: Props) {
+  constructor(props) {
     super(props);
     Voice.onSpeechStart = this.onSpeechStart;
     Voice.onSpeechRecognized = this.onSpeechRecognized;
@@ -108,11 +97,15 @@ export default class HomeScreen extends React.Component<Props, State> {
       en = false 
       if(this.state.results[0]){
         pre = this.state.results[0]
-        record('pochih',this.state.outputString)
       }
-      this.setState({
-        outputString: ''
-      })
+      if(this.state.outputString)
+        record('pochih',this.state.outputString).then(()=>{
+          console.log('complete')
+          this.props.getWordList()
+        })
+        this.setState({
+          outputString: ''
+        })
     }
   };
 
