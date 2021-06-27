@@ -11,8 +11,8 @@ function list(username = '', start) {
         FROM posts
         ${where.length ? 'WHERE ' + where.join(' AND ') : ''}
         ORDER BY id DESC
-        LIMIT 10
     `;
+    //LIMIT 10
   return db.any(sql, [username, start]);
 }
 
