@@ -27,12 +27,12 @@ export default class PostItem extends React.Component{
         return(
         <View style={styles.listItem}>
             <View style = {styles.post}>
-                <Text style = {styles.input}>{c_text}</Text>
+                <Text style = {styles.c_text}>{c_text}</Text>
                 <TouchableOpacity style = {styles.cross} onPress = {this.handleDelete.bind(this)}>
                     <Icon name="times" size={25} color="black"/>
                 </TouchableOpacity>
                 <TextInput
-                    style={styles.input}
+                    style={styles.e_text}
                     onChangeText={(text)=>{this.setState({text: text})}}
                     onSubmitEditing= {this.handleSubmit.bind(this)}
                     value= {this.state.text}
@@ -67,7 +67,8 @@ const styles = StyleSheet.create({
     c_text: {
         textAlign: 'center',
         fontSize: 30,
-        padding:5
+        padding:5,
+        fontWeight: 'bold'
     },
     post: {
         backgroundColor: 'powderblue',
@@ -77,11 +78,19 @@ const styles = StyleSheet.create({
     edit:{
 
     },
-    input:{
+    c_text:{
         textAlign: 'center',
         fontSize: 25,
         padding: 5,
+        fontWeight: 'bold'
     },
+    e_text:{
+        textAlign: 'center',
+        fontSize: 22,
+        padding: 5,
+        color: '#222222'
+    }
+    ,
     cross:{
         position:'absolute',left:360
     }

@@ -63,9 +63,9 @@ export default class Microphone extends React.Component {
             this._runAnimation();
             return (
                 <Animated.View style={{
-                    width: 90,
-                    height: 90,
-                    borderRadius: 50,
+                    width: 100,
+                    height: 100,
+                    borderRadius: 100,
                     backgroundColor: 'gray',
                     opacity: opacityA,
                     transform: [
@@ -82,10 +82,10 @@ export default class Microphone extends React.Component {
             //some function
             return (
                 <View style={{
-                    //width: 80,
-                    //height: 80,
-                    //borderRadius: 50,
-                    //backgroundColor: '#BEDCA3',
+                    width: 100,
+                    height: 100,
+                    borderRadius: 100,
+                    backgroundColor: 'tomato',
                 }}>
                     {/* icon or image */}
                 </View>
@@ -98,7 +98,7 @@ export default class Microphone extends React.Component {
             <View style={styles.container}>
                 <TouchableOpacity onPress={this._onPress} style={styles.container}>
                     {this._micButton()}
-                    <Icon name="microphone" size={40} color={this.state.isPressed?"red":"black"} style={styles.microphone}/>
+                    <Icon name="microphone" size={60} color={this.state.isPressed?"white":"#444444"} style={styles.microphone}/>
                 </TouchableOpacity>
             </View>
         );
