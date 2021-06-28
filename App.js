@@ -57,7 +57,9 @@ function ListStackScreen(props) {
 export default class App extends React.Component {
   state = {
     word: [],
-    isSignIn: false
+    isSignIn: false,
+    username:"",
+    password:""
   }
 
   componentDidMount() {
@@ -66,7 +68,7 @@ export default class App extends React.Component {
 
   render(){
     if(!this.state.isSignIn)
-      return <SignInScreen signIn={this.signIn.bind(this)}/>
+      return <SignInScreen signIn={this.signIn.bind(this)} onUsernameChange={this.onUsernameChange.bind(this)} onPasswordChange={this.onPasswordChange.bind(this)}/>
     else
     return (
       <NavigationContainer>
@@ -84,11 +86,20 @@ export default class App extends React.Component {
   }
 
   signIn(){
-    this.setState({isSignIn:true})
+    //this.setState({isSignIn:true})
+    console.log(this.state.username,this.state.password)
   }
 
   signOut(){
     this.setState({isSignIn:false})
+  }
+
+  onUsernameChange(value){
+    this.setState({username:value})
+  }
+
+  onPasswordChange(value){
+    this.setState({password:value})
   }
   
 }

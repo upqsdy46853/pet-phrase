@@ -5,7 +5,6 @@ import {
     TouchableOpacity,
     Animated
 } from 'react-native';
-//import { FontAwesome } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
