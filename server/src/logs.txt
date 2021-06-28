@@ -521,3 +521,14 @@
     at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
     at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
     at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624897065 ERROR  QueryResultError: No data returned from the query.
+    at Query.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-promise/lib/query.js:213:41)
+    at Query.handleReadyForQuery (/Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/query.js:138:12)
+    at Client._handleReadyForQuery (/Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/client.js:290:19)
+    at Connection.emit (events.js:311:20)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/pg/lib/connection.js:114:12
+    at Parser.parse (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/parser.js:40:17)
+    at Socket.<anonymous> (/Users/po_chih/Desktop/myWord/server/node_modules/pg-protocol/dist/index.js:11:42)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)

@@ -66,7 +66,7 @@ export default class App extends React.Component {
     return (
       <NavigationContainer>
         <Drawer.Navigator drawerContent={props=><DrawerContent {...props}/>}>
-          <Drawer.Screen name="Drawer" children={()=><DrawerScreen getWordList={this.getWordList} word={this.state.word}/>} />
+          <Drawer.Screen name="Drawer" children={()=><DrawerScreen getWordList={this.getWordList.bind(this)} word={this.state.word}/>} />
         </Drawer.Navigator>
       </NavigationContainer>
     );
@@ -96,7 +96,7 @@ function DrawerContent(props){
       <DrawerContentScrollView {...props}>
         <Text>pochih</Text>
 
-        <drawer.Section title="preference">
+        {/*<drawer.Section title="preference">
           <TouchableRipple onPress={()=>{toggleTheme()}}>
             <View style={{flexDirection:'row'}}>
               <Text style={{flex:1}}>你是工程師?</Text>
@@ -105,11 +105,12 @@ function DrawerContent(props){
               </View>
             </View>
           </TouchableRipple>
-        </drawer.Section>
+        </drawer.Section>*/}
 
         <drawer.Section>
           <DrawerItem
             label="登出"
+            onPress={()=>{console.log('hello')}}
           />
         </drawer.Section>
       </DrawerContentScrollView>
