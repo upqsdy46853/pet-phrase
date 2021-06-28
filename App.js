@@ -63,15 +63,15 @@ export default class App extends React.Component {
           
         }}>
           <Tab.Screen name="Home" children={()=><HomeStackScreen getWordList={this.getWordList.bind(this)}/>} options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: '首頁',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="home" size={size+5} color={color} />
+            <Icon name="home" size={size+8} color={color} />
           ),
         }}/>
           <Tab.Screen name="List" children={()=><ListStackScreen word={this.state.word} getWordList={this.getWordList.bind(this)}/>}  options={{
-          tabBarLabel: 'word',
+          tabBarLabel: '你常說',
           tabBarIcon: ({ color, size }) => (
-            <Icon name="heart" size={size} color={color} />
+            <Icon name="heart" size={size+3} color={color} />
           ),
         }}/>
         </Tab.Navigator>
