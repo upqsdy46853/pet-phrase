@@ -1,8 +1,10 @@
 import React from 'react';
-import {View, StyleSheet,Text, TouchableOpacity, TextInput} from 'react-native';
+import {View, StyleSheet,Text, TouchableOpacity, TextInput, Animated} from 'react-native';
 import  PropTypes from 'prop-types'
 import {revise, remove} from './api/record'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Swipeable } from 'react-native-gesture-handler';
+import { Extrapolate } from 'react-native-reanimated';
 
 export default class PostItem extends React.Component{
     static propTypes ={
@@ -21,24 +23,31 @@ export default class PostItem extends React.Component{
 
         
     }
-  
+    leftSwipe (progress, dragX){
+        return(
+            <TouchableOpacity style={styles.deleteBox} activeOpacity={0.6} onPress={this.handleDelete.bind(this)}>
+                <Icon name="trash" size={35} color="white" style={styles.microphone}/>
+            </TouchableOpacity>
+        )
+    }
     render(){
         const {id, c_text, e_text} = this.props;
         return(
-        <View style={styles.listItem}>
-            <View style = {styles.post}>
-                <Text style = {styles.c_text}>{c_text}</Text>
-                <TouchableOpacity style = {styles.cross} onPress = {this.handleDelete.bind(this)}>
-                    <Icon name="times" size={25} color="black"/>
-                </TouchableOpacity>
-                <TextInput
-                    style={styles.e_text}
-                    onChangeText={(text)=>{this.setState({text: text})}}
-                    onSubmitEditing= {this.handleSubmit.bind(this)}
-                    value= {this.state.text}
-                /> 
+            <View style={styles.listItem}>
+            <Swipeable
+                renderRightActions={this.leftSwipe.bind(this)}
+            >
+                <View style = {styles.post}>
+                    <Text style = {styles.c_text}>{c_text}</Text>
+                    <TextInput
+                        style={styles.e_text}
+                        onChangeText={(text)=>{this.setState({text: text})}}
+                        onSubmitEditing= {this.handleSubmit.bind(this)}
+                        value= {this.state.text}
+                    /> 
+                </View>
+            </Swipeable>
             </View>
-        </View>
         )
     }
 
@@ -61,13 +70,14 @@ const styles = StyleSheet.create({
     listItem: {
         flexDirection: 'column',
         alignItems: 'stretch',
-        borderWidth: 4,
-        borderColor: '#FFFFFF',
+        borderWidth: 5,
+        borderRadius: 10,
+        borderColor: 'rgba(0,0,0,0)',
     },
     post: {
         backgroundColor: 'powderblue',
-        borderRadius:10,
-        opacity:0.7
+        borderColor: 'rgba(0,0,0,0)',
+        borderRadius: 10
     },
     edit:{
 
@@ -83,9 +93,13 @@ const styles = StyleSheet.create({
         fontSize: 22,
         padding: 4,
         color: '#222222'
+    } ,
+    deleteBox: {
+        backgroundColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width:60,
+        borderRadius: 10,
     }
-    ,
-    cross:{
-        position:'absolute',left:360
-    }
+
 });
