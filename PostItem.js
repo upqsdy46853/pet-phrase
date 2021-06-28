@@ -81,16 +81,18 @@ const styles = StyleSheet.create({
     },
     c_text:{
         textAlign: 'center',
-        fontSize: 23,
+        fontSize: 25,
         padding: 4,
-        fontWeight: 'bold',
-        color: '#283B42'
+        color: '#283B42',
+        fontWeight:'bold'
+        
     },
     e_text:{
         textAlign: 'center',
-        fontSize: 22,
+        fontSize: 25,
         padding: 4,
-        color: '#283B42'
+        color: '#283B42',
+        fontFamily:'Avenir'
     } ,
     deleteBox: {
         backgroundColor: '#FF5151',

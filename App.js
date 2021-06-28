@@ -25,8 +25,8 @@ const Tab = createBottomTabNavigator();
 
 function HomeStackScreen(props) {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="錄音" children={()=><HomeScreen getWordList={props.getWordList}/>} />
+    <HomeStack.Navigator screenOptions={{ headerStyle: { backgroundColor: '#FFF', }, headerTitleStyle:{fontFamily:'SignPainter',fontWeight:'900',fontSize: 35} }}>
+      <HomeStack.Screen name="Pet Phrase" children={()=><HomeScreen getWordList={props.getWordList}/>} />
       {/* <HomeStack.Screen name="Details" component={DetailsScreen} /> */}
     </HomeStack.Navigator>
   );
@@ -36,8 +36,8 @@ const ListStack = createStackNavigator();
 
 function ListStackScreen(props) {
   return (
-    <ListStack.Navigator>
-      <ListStack.Screen name="你常說..." children={()=><ListScreen word={props.word} getWordList={props.getWordList}/>} />
+    <ListStack.Navigator screenOptions={{ headerStyle: { backgroundColor: '#FFF' },headerTitleStyle:{fontFamily:'SignPainter',fontWeight:'900',fontSize: 35}} }>
+      <ListStack.Screen name="Pet Phrase" children={()=><ListScreen word={props.word} getWordList={props.getWordList}/>} />
       {/* <ListStack.Screen name="Details" component={DetailsScreen} /> */}
     </ListStack.Navigator>
   );
@@ -58,7 +58,7 @@ export default class App extends React.Component {
           activeTintColor: 'black',
           inactiveTintColor: '#BEBEBE',
           style: {
-            backgroundColor: '#FFFFFF'
+            backgroundColor: '#F5F5F5'
           },
           
         }}>
@@ -86,30 +86,3 @@ export default class App extends React.Component {
   }
   
 }
-
-//import React from 'react';
-//import {Animated, TouchableOpacity, View} from 'react-native';
-//export default class App extends React.Component {
-//
-//  state = {
-//      animation: new Animated.Value(0)
-//  }
-//  
-//  onPress = () => {
-//      Animated.timing(this.state.animation, {
-//          toValue: 100,
-//          duration: 1000
-//      }).start()
-//  }
-//  
-//    render() {
-//      return (
-//       <TouchableOpacity style={{flex: 100}} onPress={this.onPress}>
-//         <Animated.View style={{ flex: this.state.animation, backgroundColor:'blue'}}>
-//         </Animated.View>
-//         <View style={{flex:100, backgroundColor:'red'}}>
-//        </View>
-//      </TouchableOpacity>
-//      );
-//    }
-//  }
