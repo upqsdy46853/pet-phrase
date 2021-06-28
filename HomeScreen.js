@@ -112,6 +112,7 @@ export default class HomeScreen extends React.Component {
   };
 
   _startRecognizing = async () => {
+    pre = ''
     this.setState({
       recognized: '',
       pitch: '',
@@ -120,11 +121,13 @@ export default class HomeScreen extends React.Component {
       results: [''],
       partialResults: [],
       end: '',
+      outputString: ''
     });
 
     Animated.timing(this.state.animation, {
       toValue: 3,
-      duration: 1000
+      duration: 1000,
+      useNativeDriver: false
     }).start()
 
     try {
@@ -140,10 +143,11 @@ export default class HomeScreen extends React.Component {
       } catch (e) {
         console.error(e);
       }
-    Animated.timing(this.state.animation, {
-      toValue: 0,
-      duration: 1000
-    }).start()
+      Animated.timing(this.state.animation, {
+        toValue: 0,
+        duration: 1000,
+        useNativeDriver: false
+      }).start()
   }; 
   _cancelRecognizing = async () => {
      try { await Voice.cancel(); } catch (e) { console.error(e);
@@ -170,7 +174,7 @@ export default class HomeScreen extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-          <Animated.View style={{flex: this.state.animation}}>
+          <Animated.View style={{flex: this.state.animation, borderWidth: 10, borderColor: '#fff'}}>
             <Text style={styles.outputString}> {this.state.outputString} </Text>
           </Animated.View>
           <Microphone record={this._startRecognizing} stop={this._stopRecognizing}/>
@@ -184,13 +188,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  box: {
-    fontSize: 40,
-    color: 'gray',
-    flex: 0,
-    borderWidth:10,
-    borderColor: '#fff'
   },
   outputString:{
     fontSize: 40,

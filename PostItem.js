@@ -8,9 +8,9 @@ import { Extrapolate } from 'react-native-reanimated';
 
 export default class PostItem extends React.Component{
     static propTypes ={
-        id: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
         c_text: PropTypes.string.isRequired,
-        content: PropTypes.string.isRequired,
+        e_text: PropTypes.string.isRequired,
         // editOpen: PropTypes.bool.isRequired
     }
 
@@ -83,13 +83,14 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 23,
         padding: 4,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: '#283B42'
     },
     e_text:{
         textAlign: 'center',
         fontSize: 22,
         padding: 4,
-        color: '#222222'
+        color: '#283B42'
     } ,
     deleteBox: {
         backgroundColor: '#FF5151',

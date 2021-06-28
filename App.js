@@ -55,8 +55,12 @@ export default class App extends React.Component {
     return (
       <NavigationContainer>
         <Tab.Navigator tabBarOptions={{
-          activeTintColor: '#272727',
+          activeTintColor: 'black',
           inactiveTintColor: '#BEBEBE',
+          style: {
+            backgroundColor: '#FFFFFF'
+          },
+          
         }}>
           <Tab.Screen name="Home" children={()=><HomeStackScreen getWordList={this.getWordList.bind(this)}/>} options={{
           tabBarLabel: 'Home',
