@@ -16,14 +16,21 @@ export default class ListScreen extends React.Component {
 
   render(){
     return (
-        <View>
-        <FlatList
-          data = {this.props.word}
-          renderItem = {(p) => { return <PostItem {...p.item} getWordList={this.props.getWordList}/>;}}
-          keyExtractor={item => item.id}
-        />
+        <View style={styles.container}>
+          <FlatList
+            data = {this.props.word}
+            renderItem = {(p) => { return <PostItem {...p.item} getWordList={this.props.getWordList}/>;}}
+            keyExtractor={item => item.id}
+          />
         </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    backgroundColor: '#eee'
+  },
+});
 

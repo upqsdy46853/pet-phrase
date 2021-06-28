@@ -70,17 +70,14 @@ const styles = StyleSheet.create({
     listItem: {
         flexDirection: 'column',
         alignItems: 'stretch',
-        borderWidth: 5,
+        borderWidth: 10,
         borderRadius: 10,
         borderColor: 'rgba(0,0,0,0)',
     },
     post: {
-        backgroundColor: 'powderblue',
+        backgroundColor: '#C4E1E1',
         borderColor: 'rgba(0,0,0,0)',
         borderRadius: 10
-    },
-    edit:{
-
     },
     c_text:{
         textAlign: 'center',
@@ -95,7 +92,7 @@ const styles = StyleSheet.create({
         color: '#222222'
     } ,
     deleteBox: {
-        backgroundColor: 'red',
+        backgroundColor: '#FF5151',
         justifyContent: 'center',
         alignItems: 'center',
         width:60,

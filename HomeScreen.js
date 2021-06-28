@@ -157,10 +157,10 @@ export default class HomeScreen extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <View style={styles.contents}>
-          <Text style={styles.outputString}> {this.state.outputString} </Text>
+          <View style={styles.box}>
+            <Text style={styles.outputString}> {this.state.outputString} </Text>
+          </View>
           <Microphone record={this._startRecognizing} stop={this._stopRecognizing}/>
-        </View>
       </View>
     );
   }
@@ -171,16 +171,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    justifyContent: 'space-between',
+    backgroundColor: '#eee'
   },
-  contents: {
-    flex:1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  outputString: {
+  box: {
     fontSize: 40,
-    color: 'gray'
+    color: 'gray',
+    flex: 3,
+    borderWidth:10,
+    borderColor: '#eee'
+  },
+  outputString:{
+    fontSize: 40,
+    color: 'gray',
+    flex: 5,
+    borderWidth:2,
+    borderRadius: 6,
+    borderColor: '#eee'
   }
 });
