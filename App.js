@@ -15,6 +15,7 @@ import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import {Drawer as drawer, TouchableRipple, Switch} from 'react-native-paper'
 import SignInScreen from './SignIn.js';
+import { login } from './api/login.js';
 
 
 const HomeStack = createStackNavigator();
@@ -32,13 +33,13 @@ function HomeStackScreen(props) {
   return (
     <HomeStack.Navigator screenOptions={{ headerStyle: { backgroundColor: '#FFF', },
       headerTitleStyle:{fontFamily:'SignPainter',fontWeight:'900',fontSize: 35},
-      headerRight:()=>(
-        <TouchableOpacity>
-          <Icon name="ellipsis-v" size={30} style={{width:15}}/>
-        </TouchableOpacity>
-      )
+      //headerRight:()=>(
+      //  <TouchableOpacity>
+      //    <Icon name="ellipsis-v" size={30} style={{width:15}}/>
+      //  </TouchableOpacity>
+      //)
     }}>
-      <HomeStack.Screen name="Pet Phrase" children={()=><HomeScreen getWordList={props.getWordList}/>} />
+      <HomeStack.Screen name="Pet Phrase" children={()=><HomeScreen username={props.username} getWordList={props.getWordList}/>} />
       {/* <HomeStack.Screen name="Details" component={DetailsScreen} /> */}
     </HomeStack.Navigator>
   );
@@ -62,10 +63,6 @@ export default class App extends React.Component {
     password:""
   }
 
-  componentDidMount() {
-    this.getWordList()
-  }
-
   render(){
     if(!this.state.isSignIn)
       return <SignInScreen signIn={this.signIn.bind(this)} onUsernameChange={this.onUsernameChange.bind(this)} onPasswordChange={this.onPasswordChange.bind(this)}/>
@@ -73,25 +70,35 @@ export default class App extends React.Component {
     return (
       <NavigationContainer>
         <Drawer.Navigator drawerContent={props=><DrawerContent {...props} signOut={this.signOut.bind(this)}/>}>
-          <Drawer.Screen name="Drawer" children={()=><DrawerScreen getWordList={this.getWordList.bind(this)} word={this.state.word} />} />
+          <Drawer.Screen name="Drawer" children={()=><DrawerScreen getWordList={this.getWordList.bind(this)} word={this.state.word} username={this.state.username}/>} />
         </Drawer.Navigator>
       </NavigationContainer>
     );
   }
 
   getWordList(){
-    list('pochih').then(word=>{
-      this.setState({word})
+    list(this.state.username).then(word=>{
+      this.setState({
+        word,
+      })
      })
   }
 
   signIn(){
-    //this.setState({isSignIn:true})
-    console.log(this.state.username,this.state.password)
+    login(this.state.username,this.state.password).then(res=>{
+      if(res.exists){
+        this.setState({isSignIn:true})
+        console.log(this.state.username)
+      }
+    })
   }
 
   signOut(){
-    this.setState({isSignIn:false})
+    console.log(this.state.username)
+    this.setState({
+      isSignIn:false,
+      password:""
+    })
   }
 
   onUsernameChange(value){
@@ -152,7 +159,7 @@ function DrawerScreen(props) {
           backgroundColor: '#F5F5F5'
         },
       }}>
-        <Tab.Screen name="Home" children={()=><HomeStackScreen getWordList={props.getWordList.bind(this)}/>} options={{
+        <Tab.Screen name="Home" children={()=><HomeStackScreen username={props.username} getWordList={props.getWordList.bind(this)}/>} options={{
         tabBarLabel: '首頁',
         tabBarIcon: ({ color, size }) => (
           <Icon name="home" size={size+8} color={color} />

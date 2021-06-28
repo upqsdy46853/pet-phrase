@@ -532,3 +532,25 @@
     at Socket.emit (events.js:311:20)
     at addChunk (_stream_readable.js:294:12)
     at readableAddChunk (_stream_readable.js:275:11)
+1624908815 ERROR  ReferenceError: id is not defined
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:75:21
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+1624908839 ERROR  ReferenceError: id is not defined
+    at /Users/po_chih/Desktop/myWord/server/src/routers/posts.js:75:21
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/index.js:275:10)
+    at module.exports (/Users/po_chih/Desktop/myWord/server/src/middleware/access-controller.js:20:3)
+    at Layer.handle [as handle_request] (/Users/po_chih/Desktop/myWord/server/node_modules/express/lib/router/layer.js:95:5)

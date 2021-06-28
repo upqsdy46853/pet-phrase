@@ -26,6 +26,7 @@ export default class SignIn extends React.Component{
 	  placeholder="密碼"
 	  inputContainerStyle={styles.inputContainer}
 	  inputStyle={styles.inputText}
+	  secureTextEntry={true}
 	  leftIcon={
 		<Icon name="lock" size={20} color={'#4F4F4F'}/>
 	  }

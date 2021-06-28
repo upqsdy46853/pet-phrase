@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const accessController = require('../middleware/access-controller.js');
 
 const postModel = require('../model/posts.js');
+const loginModel = require('../model/log_in.js')
 
 const router = express.Router();
 
@@ -67,5 +68,14 @@ router.post('/delete/:id', function (req, res, next) {
       .catch(next);
 });
 
-
+// Login
+router.post('/login', function (req, res, next) {
+  const {username, password} = req.body;
+  loginModel
+    .exist(username,password)
+    .then(data => {
+      res.json(data)
+    })
+    .catch(next)
+})
 module.exports = router;

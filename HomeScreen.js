@@ -101,13 +101,12 @@ export default class HomeScreen extends React.Component {
         pre = this.state.results[0]
       }
       if(this.state.outputString)
-        record('pochih',this.state.outputString).then(()=>{
-          console.log('complete')
+        record(this.props.username,this.state.outputString).then(()=>{
           this.props.getWordList()
         })
-        this.setState({
-          outputString: ''
-        })
+      this.setState({
+        outputString: ''
+      })
     }
   };
 

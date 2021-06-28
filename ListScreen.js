@@ -10,6 +10,9 @@ export default class ListScreen extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.getWordList()
+  }
   renderItem(p) {
     return <PostItem {...p} />;
   }
