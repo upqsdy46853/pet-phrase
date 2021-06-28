@@ -14,6 +14,7 @@ import {TouchableOpacity} from 'react-native'
 import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import {Drawer as drawer, TouchableRipple, Switch} from 'react-native-paper'
+import SignInScreen from './SignIn.js';
 
 
 const HomeStack = createStackNavigator();
@@ -55,7 +56,8 @@ function ListStackScreen(props) {
 }
 export default class App extends React.Component {
   state = {
-    word: []
+    word: [],
+    isSignIn: false
   }
 
   componentDidMount() {
@@ -63,10 +65,13 @@ export default class App extends React.Component {
   }
 
   render(){
+    if(!this.state.isSignIn)
+      return <SignInScreen signIn={this.signIn.bind(this)}/>
+    else
     return (
       <NavigationContainer>
-        <Drawer.Navigator drawerContent={props=><DrawerContent {...props}/>}>
-          <Drawer.Screen name="Drawer" children={()=><DrawerScreen getWordList={this.getWordList.bind(this)} word={this.state.word}/>} />
+        <Drawer.Navigator drawerContent={props=><DrawerContent {...props} signOut={this.signOut.bind(this)}/>}>
+          <Drawer.Screen name="Drawer" children={()=><DrawerScreen getWordList={this.getWordList.bind(this)} word={this.state.word} />} />
         </Drawer.Navigator>
       </NavigationContainer>
     );
@@ -76,6 +81,14 @@ export default class App extends React.Component {
     list('pochih').then(word=>{
       this.setState({word})
      })
+  }
+
+  signIn(){
+    this.setState({isSignIn:true})
+  }
+
+  signOut(){
+    this.setState({isSignIn:false})
   }
   
 }
@@ -110,7 +123,7 @@ function DrawerContent(props){
         <drawer.Section>
           <DrawerItem
             label="登出"
-            onPress={()=>{console.log('hello')}}
+            onPress={props.signOut}
           />
         </drawer.Section>
       </DrawerContentScrollView>
@@ -127,7 +140,6 @@ function DrawerScreen(props) {
         style: {
           backgroundColor: '#F5F5F5'
         },
-        
       }}>
         <Tab.Screen name="Home" children={()=><HomeStackScreen getWordList={props.getWordList.bind(this)}/>} options={{
         tabBarLabel: '首頁',
