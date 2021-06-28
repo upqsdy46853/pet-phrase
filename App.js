@@ -83,3 +83,29 @@ export default class App extends React.Component {
   
 }
 
+//import React from 'react';
+//import {Animated, TouchableOpacity, View} from 'react-native';
+//export default class App extends React.Component {
+//
+//  state = {
+//      animation: new Animated.Value(0)
+//  }
+//  
+//  onPress = () => {
+//      Animated.timing(this.state.animation, {
+//          toValue: 100,
+//          duration: 1000
+//      }).start()
+//  }
+//  
+//    render() {
+//      return (
+//       <TouchableOpacity style={{flex: 100}} onPress={this.onPress}>
+//         <Animated.View style={{ flex: this.state.animation, backgroundColor:'blue'}}>
+//         </Animated.View>
+//         <View style={{flex:100, backgroundColor:'red'}}>
+//        </View>
+//      </TouchableOpacity>
+//      );
+//    }
+//  }

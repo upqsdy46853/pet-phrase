@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Animated} from 'react-native';
 import Microphone from './Microphone.js'
 import {record} from './api/record'
 
@@ -8,6 +8,7 @@ import Voice, {
   SpeechResultsEvent,
   SpeechErrorEvent,
 } from '@react-native-voice/voice';
+import { Button } from 'react-native-elements/dist/buttons/Button';
 
 
 export default class HomeScreen extends React.Component {
@@ -20,6 +21,7 @@ export default class HomeScreen extends React.Component {
     results: [''],
     partialResults: [],
     outputString: '',
+    animation: new Animated.Value(0)
   };
   constructor(props) {
     super(props);
@@ -120,6 +122,11 @@ export default class HomeScreen extends React.Component {
       end: '',
     });
 
+    Animated.timing(this.state.animation, {
+      toValue: 3,
+      duration: 1000
+    }).start()
+
     try {
       await Voice.start('zh_TW');
     } catch (e) {
@@ -128,12 +135,18 @@ export default class HomeScreen extends React.Component {
   };
 
   _stopRecognizing = async () => {
-    try {
-      await Voice.stop();
-    } catch (e) {
-      console.error(e);
-    }
-  }; _cancelRecognizing = async () => { try { await Voice.cancel(); } catch (e) { console.error(e);
+      try {
+        await Voice.stop();
+      } catch (e) {
+        console.error(e);
+      }
+    Animated.timing(this.state.animation, {
+      toValue: 0,
+      duration: 1000
+    }).start()
+  }; 
+  _cancelRecognizing = async () => {
+     try { await Voice.cancel(); } catch (e) { console.error(e);
     }
   };
 
@@ -157,9 +170,9 @@ export default class HomeScreen extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-          <View style={styles.box}>
+          <Animated.View style={{flex: this.state.animation}}>
             <Text style={styles.outputString}> {this.state.outputString} </Text>
-          </View>
+          </Animated.View>
           <Microphone record={this._startRecognizing} stop={this._stopRecognizing}/>
       </View>
     );
@@ -171,21 +184,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    backgroundColor: '#eee'
   },
   box: {
     fontSize: 40,
     color: 'gray',
-    flex: 3,
+    flex: 0,
     borderWidth:10,
-    borderColor: '#eee'
+    borderColor: '#fff'
   },
   outputString:{
     fontSize: 40,
     color: 'gray',
     flex: 5,
-    borderWidth:2,
-    borderRadius: 6,
-    borderColor: '#eee'
   }
 });
