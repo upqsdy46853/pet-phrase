@@ -76,8 +76,7 @@ const styles = StyleSheet.create({
     },
     post: {
         backgroundColor: '#C4E1E1',
-        borderColor: 'rgba(0,0,0,0)',
-        borderRadius: 10
+        borderRadius: 10,
     },
     c_text:{
         textAlign: 'center',
@@ -85,7 +84,6 @@ const styles = StyleSheet.create({
         padding: 4,
         color: '#283B42',
         fontWeight:'bold'
-        
     },
     e_text:{
         textAlign: 'center',
