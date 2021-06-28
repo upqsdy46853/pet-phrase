@@ -93,10 +93,10 @@ const styles = StyleSheet.create({
         fontFamily:'Avenir'
     } ,
     deleteBox: {
-        backgroundColor: '#FF5151',
+        backgroundColor: '#ADADAD',
         justifyContent: 'center',
         alignItems: 'center',
-        width:60,
+        width:70,
         borderRadius: 10,
     }
 
