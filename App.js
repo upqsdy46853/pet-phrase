@@ -10,6 +10,10 @@ import {list, revise, remove} from './api/record'
 import {PERMISSIONS} from 'react-native-permissions';
 PERMISSIONS.IOS.SPEECH_RECOGNITION;
 PERMISSIONS.IOS.MICROPHONE;
+import {TouchableOpacity} from 'react-native'
+import { Button, View, Text } from 'react-native';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
+import {Drawer as drawer, TouchableRipple, Switch} from 'react-native-paper'
 
 
 const HomeStack = createStackNavigator();
@@ -25,7 +29,14 @@ const Tab = createBottomTabNavigator();
 
 function HomeStackScreen(props) {
   return (
-    <HomeStack.Navigator screenOptions={{ headerStyle: { backgroundColor: '#FFF', }, headerTitleStyle:{fontFamily:'SignPainter',fontWeight:'900',fontSize: 35} }}>
+    <HomeStack.Navigator screenOptions={{ headerStyle: { backgroundColor: '#FFF', },
+      headerTitleStyle:{fontFamily:'SignPainter',fontWeight:'900',fontSize: 35},
+      headerRight:()=>(
+        <TouchableOpacity>
+          <Icon name="ellipsis-v" size={30} style={{width:15}}/>
+        </TouchableOpacity>
+      )
+    }}>
       <HomeStack.Screen name="Pet Phrase" children={()=><HomeScreen getWordList={props.getWordList}/>} />
       {/* <HomeStack.Screen name="Details" component={DetailsScreen} /> */}
     </HomeStack.Navigator>
@@ -54,27 +65,9 @@ export default class App extends React.Component {
   render(){
     return (
       <NavigationContainer>
-        <Tab.Navigator tabBarOptions={{
-          activeTintColor: 'black',
-          inactiveTintColor: '#BEBEBE',
-          style: {
-            backgroundColor: '#F5F5F5'
-          },
-          
-        }}>
-          <Tab.Screen name="Home" children={()=><HomeStackScreen getWordList={this.getWordList.bind(this)}/>} options={{
-          tabBarLabel: '首頁',
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="home" size={size+8} color={color} />
-          ),
-        }}/>
-          <Tab.Screen name="List" children={()=><ListStackScreen word={this.state.word} getWordList={this.getWordList.bind(this)}/>}  options={{
-          tabBarLabel: '你常說',
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="heart" size={size+3} color={color} />
-          ),
-        }}/>
-        </Tab.Navigator>
+        <Drawer.Navigator drawerContent={props=><DrawerContent {...props}/>}>
+          <Drawer.Screen name="Drawer" children={()=><DrawerScreen getWordList={this.getWordList} word={this.state.word}/>} />
+        </Drawer.Navigator>
       </NavigationContainer>
     );
   }
@@ -85,4 +78,68 @@ export default class App extends React.Component {
      })
   }
   
+}
+
+
+
+const Drawer = createDrawerNavigator();
+
+function DrawerContent(props){
+
+  const [isEngineer, becomeEnginner] = React.useState(false);
+
+  const toggleTheme = ()=>{
+    becomeEnginner(!isEngineer);
+  };
+  return (
+    <View style={{flex:1}}>
+      <DrawerContentScrollView {...props}>
+        <Text>pochih</Text>
+
+        <drawer.Section title="preference">
+          <TouchableRipple onPress={()=>{toggleTheme()}}>
+            <View style={{flexDirection:'row'}}>
+              <Text style={{flex:1}}>你是工程師?</Text>
+              <View pointerEvents="none">
+                <Switch value={isEngineer}/>
+              </View>
+            </View>
+          </TouchableRipple>
+        </drawer.Section>
+
+        <drawer.Section>
+          <DrawerItem
+            label="登出"
+          />
+        </drawer.Section>
+      </DrawerContentScrollView>
+    </View>
+
+  )
+}
+
+function DrawerScreen(props) {
+  return (
+      <Tab.Navigator tabBarOptions={{
+        activeTintColor: 'black',
+        inactiveTintColor: '#BEBEBE',
+        style: {
+          backgroundColor: '#F5F5F5'
+        },
+        
+      }}>
+        <Tab.Screen name="Home" children={()=><HomeStackScreen getWordList={props.getWordList.bind(this)}/>} options={{
+        tabBarLabel: '首頁',
+        tabBarIcon: ({ color, size }) => (
+          <Icon name="home" size={size+8} color={color} />
+        ),
+      }}/>
+        <Tab.Screen name="List" children={()=><ListStackScreen word={props.word} getWordList={props.getWordList.bind(this)}/>}  options={{
+        tabBarLabel: '你常說',
+        tabBarIcon: ({ color, size }) => (
+          <Icon name="heart" size={size+3} color={color} />
+        ),
+      }}/>
+      </Tab.Navigator>
+  );
 }
