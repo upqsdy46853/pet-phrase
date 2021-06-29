@@ -69,13 +69,36 @@ router.post('/delete/:id', function (req, res, next) {
 });
 
 // Login
-router.post('/login', function (req, res, next) {
+router.post('/correct', function (req, res, next) {
   const {username, password} = req.body;
   loginModel
-    .exist(username,password)
+    .correct(username,password)
     .then(data => {
       res.json(data)
     })
     .catch(next)
 })
+
+// signUp
+router.post('/signup', function (req, res, next) {
+  const {username, password} = req.body;
+  return loginModel
+    .create(username,password)
+    .then(data => {
+      res.json(data)
+    })
+    .catch(next)
+})
+
+// exist
+router.get('/exist', function (req, res, next) {
+  const { username} = req.query;
+  loginModel
+    .exist(username)
+    .then((posts) => {
+      res.json(posts);
+    })
+    .catch(next);
+});
+
 module.exports = router;

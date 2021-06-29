@@ -14,8 +14,8 @@ import {TouchableOpacity} from 'react-native'
 import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import {Drawer as drawer, TouchableRipple, Switch, Title} from 'react-native-paper'
-import SignInScreen from './SignIn.js';
-import { login } from './api/login.js';
+import SignIn from './SignIn.js';
+import { correct, exist,signup } from './api/login.js';
 import { Avatar } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -67,7 +67,7 @@ export default class App extends React.Component {
 
   render(){
     if(!this.state.isSignIn)
-      return <SignInScreen signIn={this.signIn.bind(this)} onUsernameChange={this.onUsernameChange.bind(this)} onPasswordChange={this.onPasswordChange.bind(this)}/>
+      return <SignIn signIn={this.signIn.bind(this)} onUsernameChange={this.onUsernameChange.bind(this)} onPasswordChange={this.onPasswordChange.bind(this)}/>
     else
     return (
       <NavigationContainer>
@@ -87,10 +87,17 @@ export default class App extends React.Component {
   }
 
   signIn(){
-    login(this.state.username,this.state.password).then(res=>{
+    correct(this.state.username,this.state.password).then(res=>{
       if(res.exists){
         this.setState({isSignIn:true})
-        console.log(this.state.username)
+      }
+      else{
+        exist(this.state.username).then(res=>{
+          if(!res.exists)
+            signup(this.state.username, this.state.password).then(res=>{
+              console.log(res)
+            })
+        })
       }
     })
   }

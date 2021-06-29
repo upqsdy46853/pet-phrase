@@ -1,10 +1,12 @@
 import React from "react";
 import {Text, StyleSheet, View, SafeAreaView, TouchableOpacity,Button} from 'react-native'
 import { Input } from "react-native-elements";
+import { sin } from "react-native-reanimated";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class SignIn extends React.Component{
   state = {
+    signUp : false
   }
   render(){
     return(
@@ -45,15 +47,20 @@ export default class SignIn extends React.Component{
           </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.signUpBox}>
+      {/*<View style={styles.signUpBox}>
         <Text style={{color:'gray', alignItems:'center'}}>還沒有帳號？</Text>
-        <TouchableOpacity onPress={()=>{console.log('hello')}} >
+        <TouchableOpacity onPress={this.hanleSignUp.bind(this)} >
           <Text style={{color:'#0066CC'}}>註冊</Text>
         </TouchableOpacity>
-      </View>
+      </View>*/}
       </SafeAreaView>
     )
   }
+  //hanleSignUp(){
+  //  this.setState({
+  //    signUp: true
+  //  },()=> console.log(this.state.signUp))
+  //}
 }
 const styles = StyleSheet.create({
   container: {

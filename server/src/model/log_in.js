@@ -11,16 +11,22 @@ function create(username, password) {
 };
 
 
-function exist(username, password) {
+function correct(username, password) {
   const sql = `
   SELECT EXISTS(SELECT 1 FROM users WHERE username = $<username> AND password = $<password>);
   `;
   return db.one(sql, { username, password });
 }
 
-create("brian","12345")
+function exist(username) {
+  const sql = `
+    SELECT EXISTS(SELECT FROM users WHERE username = $<username>);
+  `;
+  return db.one(sql, {username});
+}
 
 module.exports = {
   create,
-  exist
+  exist,
+  correct
 };
