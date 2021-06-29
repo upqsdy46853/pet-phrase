@@ -18,7 +18,7 @@ export default class SignIn extends React.Component{
 
         <View style={styles.inputBox}>
           <Input
-          placeholder="帳號"
+          placeholder="使用者名稱"
           inputContainerStyle={styles.inputContainer}
           inputStyle={styles.inputText}
           leftIcon={

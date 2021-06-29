@@ -60,8 +60,8 @@ function ListStackScreen(props) {
 export default class App extends React.Component {
   state = {
     word: [],
-    isSignIn: true,
-    username:"pochih",
+    isSignIn: false,
+    username:"",
     password:""
   }
 
@@ -134,9 +134,9 @@ function DrawerContent(props){
         <Avatar
           rounded
           size={'large'}
-          icon={{name: 'user',color:'white', type: 'font-awesome', size:60}}
+          icon={{name: 'user',color:'#FFFFFF', type: 'font-awesome', size:60}}
           onPress={() => console.log("Works!")}
-          containerStyle={{marginLeft: 20, backgroundColor:'#4F9D9D'}}
+          containerStyle={{marginLeft: 20, backgroundColor:'#4A708B'}}
         />
         <View style={{justifyContent:'center', padding:20}}>
         <Title style={{fontSize:30}}>{props.username}</Title>
