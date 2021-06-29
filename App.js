@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome';
+//import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from './HomeScreen.js'
 import ListScreen from './ListScreen.js'
 import VoiceTest from './VoiceTest.js'
@@ -13,9 +13,11 @@ PERMISSIONS.IOS.MICROPHONE;
 import {TouchableOpacity} from 'react-native'
 import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
-import {Drawer as drawer, TouchableRipple, Switch} from 'react-native-paper'
+import {Drawer as drawer, TouchableRipple, Switch, Title} from 'react-native-paper'
 import SignInScreen from './SignIn.js';
 import { login } from './api/login.js';
+import { Avatar } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
 const HomeStack = createStackNavigator();
@@ -69,7 +71,7 @@ export default class App extends React.Component {
     else
     return (
       <NavigationContainer>
-        <Drawer.Navigator drawerContent={props=><DrawerContent {...props} signOut={this.signOut.bind(this)}/>}>
+        <Drawer.Navigator drawerContent={props=><DrawerContent {...props} signOut={this.signOut.bind(this)} username={this.state.username}/>}>
           <Drawer.Screen name="Drawer" children={()=><DrawerScreen getWordList={this.getWordList.bind(this)} word={this.state.word} username={this.state.username}/>} />
         </Drawer.Navigator>
       </NavigationContainer>
@@ -117,34 +119,33 @@ const Drawer = createDrawerNavigator();
 
 function DrawerContent(props){
 
-  const [isEngineer, becomeEnginner] = React.useState(false);
 
-  const toggleTheme = ()=>{
-    becomeEnginner(!isEngineer);
-  };
   return (
     <View style={{flex:1}}>
       <DrawerContentScrollView {...props}>
-        <Text>pochih</Text>
+      <View style={{flexDirection:'row', height:90}}>
+        <Avatar
+          rounded
+          size={'large'}
+          icon={{name: 'user',color:'white', type: 'font-awesome', size:60}}
+          onPress={() => console.log("Works!")}
+          containerStyle={{marginLeft: 20, backgroundColor:'gray'}}
+        />
+        <View style={{justifyContent:'center', padding:20}}>
+        <Title style={{fontSize:30}}>{props.username}</Title>
+        </View>
+      </View>
+          <drawer.Section style={{justifyContent:'center',justifyContent:''}}>
+            <DrawerItem
+              icon={({color,size})=>(
+                <Icon name="exit-to-app" size={30} color={"#444444"}/>
+              )}
+              label="登出"
+              onPress={props.signOut}
+            />
+          </drawer.Section>
+        </DrawerContentScrollView>
 
-        {/*<drawer.Section title="preference">
-          <TouchableRipple onPress={()=>{toggleTheme()}}>
-            <View style={{flexDirection:'row'}}>
-              <Text style={{flex:1}}>你是工程師?</Text>
-              <View pointerEvents="none">
-                <Switch value={isEngineer}/>
-              </View>
-            </View>
-          </TouchableRipple>
-        </drawer.Section>*/}
-
-        <drawer.Section>
-          <DrawerItem
-            label="登出"
-            onPress={props.signOut}
-          />
-        </drawer.Section>
-      </DrawerContentScrollView>
     </View>
 
   )
